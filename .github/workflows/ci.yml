@@ -45,5 +45,11 @@ jobs:
       - name: Install project dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Diagnose Python imports
+        run: |
+          python -u -c "print('Testing torch...', flush=True); import torch; print('torch OK:', torch.__version__, flush=True)"
+          python -u -c "print('Testing torchvision...', flush=True); import torchvision; print('torchvision OK:', torchvision.__version__, flush=True)"
+          python -u -c "print('Testing FastAPI app...', flush=True); import app; print('app import OK', flush=True)"
+
       - name: Run automated tests
         run: python -m pytest -v
