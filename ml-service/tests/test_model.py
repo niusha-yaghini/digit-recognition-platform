@@ -1,7 +1,7 @@
 
 import torch
 from model import DigitClassifier
-from predict import load_model, predict_digit
+from predict import predict_digit
 
 def test_model_output_shape() -> None:
     model = DigitClassifier()
@@ -22,7 +22,8 @@ def test_model_outputs_finite_values() -> None:
 
 
 def test_prediction_returns_valid_digit() -> None:
-    model = load_model()
+    # model = load_model()
+    model = DigitClassifier()
     image = torch.rand(1, 1, 28, 28)
 
     prediction = predict_digit(model, image)
@@ -32,7 +33,8 @@ def test_prediction_returns_valid_digit() -> None:
 
 
 def test_prediction_rejects_invalid_input_shape() -> None:
-    model = load_model()
+    # model = load_model()
+    model = DigitClassifier()
     invalid_image = torch.rand(1, 28, 28)
 
     try:
