@@ -3,6 +3,9 @@ FROM python:3.10-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PIP_INDEX_URL=https://mirrors.ustc.edu.cn/pypi/simple/
+ENV PIP_DEFAULT_TIMEOUT=30
+ENV PIP_RETRIES=2
 
 WORKDIR /app
 
@@ -10,7 +13,8 @@ COPY requirements.txt .
 
 RUN python -m pip install --no-cache-dir \
     torch==2.14.1 torchvision==0.29.1 \
-    --index-url https://download.pytorch.org/whl/cpu
+    --index-url https://download.pytorch.org/whl/cpu \
+    --timeout 30 --retries 2
 
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
