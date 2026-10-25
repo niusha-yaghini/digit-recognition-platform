@@ -14,6 +14,7 @@ COPY requirements.txt .
 RUN python -m pip install --no-cache-dir \
     torch==2.14.1 torchvision==0.29.1 \
     --index-url https://download.pytorch.org/whl/cpu \
+    --extra-index-url https://mirrors.ustc.edu.cn/pypi/simple/ \
     --timeout 30 --retries 2
 
 RUN python -m pip install --no-cache-dir -r requirements.txt
