@@ -2,3 +2,8 @@
 torch
 torchvision
 pytest
+fastapi
+uvicorn
+python-multipart
+pillow
+httpx
