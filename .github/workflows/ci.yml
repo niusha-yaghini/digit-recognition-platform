@@ -5,18 +5,10 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - "ml-service/**"
-      - ".github/workflows/ci.yml"
-      - "docker-compose.yml"
 
   push:
     branches:
       - main
-    paths:
-      - "ml-service/**"
-      - ".github/workflows/ci.yml"
-      - "docker-compose.yml"
 
 permissions:
   contents: read
