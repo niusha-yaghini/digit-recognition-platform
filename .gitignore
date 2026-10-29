@@ -33,6 +33,7 @@ datasets/
 # Local model artifacts
 *.pt
 *.pth
+!ml-service/artifacts/mnist_model.pth
 *.onnx
 
 # Operating system files
