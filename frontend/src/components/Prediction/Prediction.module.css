@@ -1,0 +1,59 @@
+.container {
+  max-width: 520px;
+  margin: 80px auto;
+  padding: 32px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.upload {
+  display: inline-block;
+  margin: 24px 0;
+  padding: 12px 20px;
+  border: 1px dashed #9ca3af;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upload input {
+  display: none;
+}
+
+.preview {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin: 20px auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.container button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f0fdf4;
+}

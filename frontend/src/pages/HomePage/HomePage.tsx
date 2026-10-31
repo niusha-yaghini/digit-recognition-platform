@@ -3,6 +3,8 @@ import { useState } from "react";
 import ImageUploader from "../../components/ImageUploader/ImageUploader";
 import styles from "./HomePage.module.css";
 
+import Prediction from "../../components/Prediction/Prediction";
+
 function HomePage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
@@ -47,7 +49,7 @@ function HomePage() {
       </section>
 
       {/* Upload Section */}
-      <section className={styles.uploadSection}>
+      {/* <section className={styles.uploadSection}>
         <div className={styles.uploadContent}>
           <ImageUploader
             file={selectedFile}
@@ -62,6 +64,18 @@ function HomePage() {
           >
             Recognize Digit
           </button>
+        </div>
+      </section> */}
+      {/* Upload Section */}
+      <section className={styles.uploadSection}>
+        <div className={styles.uploadContent}>
+          <ImageUploader
+            file={selectedFile}
+            onFileSelect={handleFileSelect}
+            onRemove={handleRemoveFile}
+          />
+
+          <Prediction file={selectedFile} />
         </div>
       </section>
 
