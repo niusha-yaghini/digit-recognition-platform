@@ -1,10 +1,73 @@
-
 services:
+
+  # Machine Learning Service
   ml-service:
     build:
       context: ./ml-service
       dockerfile: Dockerfile
     image: digit-recognition-ml:local
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  # Node.js Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: digit-recognition-backend:local
+    environment:
+      PORT: 3000
+      FRONTEND_URL: http://localhost:5173
+      ML_SERVICE_URL: http://ml-service:8000
+    expose:
+      - "3000"
+    depends_on:
+      ml-service:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/api/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # React Frontend + Nginx
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: digit-recognition-frontend:local
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - -O
+        - /dev/null
+        - http://127.0.0.1/
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
