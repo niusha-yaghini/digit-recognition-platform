@@ -1,0 +1,136 @@
+.uploader {
+  width: 100%;
+}
+
+.dropZone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 35px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.2s ease;
+}
+
+.dragging {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.uploadIcon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 28px;
+}
+
+.dropZone h3 {
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.dropZone p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.dropZone > span {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.browseButton {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.browseButton:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.browseButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dropZone small {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.statusMessage {
+  color: #2563eb !important;
+}
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.previewImage {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.fileName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  overflow-wrap: anywhere;
+}
+
+.fileSize {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.removeButton {
+  border: 1px solid #ef4444;
+  background: white;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #fef2f2;
+}
+
+.errorMessage {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+}

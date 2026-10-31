@@ -1,6 +1,19 @@
+import { useState } from "react";
+
+import ImageUploader from "../../components/ImageUploader/ImageUploader";
 import styles from "./HomePage.module.css";
 
 function HomePage() {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleFileSelect = (file: File) => {
+    setSelectedFile(file);
+  };
+
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
+  };
+
   return (
     <main className={styles.homePage}>
       {/* Header */}
@@ -36,25 +49,17 @@ function HomePage() {
       {/* Upload Section */}
       <section className={styles.uploadSection}>
         <div className={styles.uploadContent}>
-          <div className={styles.uploadIcon}>↑</div>
+          <ImageUploader
+            file={selectedFile}
+            onFileSelect={handleFileSelect}
+            onRemove={handleRemoveFile}
+          />
 
-          <h2>Upload Your Image</h2>
-
-          <p>Select an image containing a handwritten digit.</p>
-
-          <div className={styles.uploadBox}>
-            <p>Drag and drop your image here</p>
-
-            <span>or</span>
-
-            <button type="button" disabled>
-              Browse Files
-            </button>
-
-            <small>PNG, JPG or JPEG</small>
-          </div>
-
-          <button type="button" className={styles.predictButton} disabled>
+          <button
+            type="button"
+            className={styles.predictButton}
+            disabled={!selectedFile}
+          >
             Recognize Digit
           </button>
         </div>

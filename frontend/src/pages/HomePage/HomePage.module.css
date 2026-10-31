@@ -79,11 +79,11 @@
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
 }
 
-.uploadIcon {
+/* .uploadIcon {
   font-size: 32px;
   color: #2563eb;
   margin-bottom: 15px;
-}
+} */
 
 .uploadContent h2 {
   font-size: 22px;
@@ -96,7 +96,7 @@
   margin-bottom: 28px;
 }
 
-.uploadBox {
+/* .uploadBox {
   border: 2px dashed #cbd5e1;
   border-radius: 12px;
   padding: 35px 15px;
@@ -104,9 +104,9 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-}
+} */
 
-.uploadBox p {
+/* .uploadBox p {
   font-weight: 600;
 }
 
@@ -114,16 +114,16 @@
 .uploadBox small {
   color: #94a3b8;
   font-size: 13px;
-}
+} */
 
-.uploadBox button {
+/* .uploadBox button {
   background: #eff6ff;
   color: #2563eb;
   border: none;
   padding: 10px 22px;
   border-radius: 7px;
   font-weight: 600;
-}
+} */
 
 .predictButton {
   width: 100%;
