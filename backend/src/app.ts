@@ -7,6 +7,8 @@ import { env } from './config/env.js'
 import { notFoundHandler } from './middleware/not-found.middleware.js'
 import { errorHandler } from './middleware/error.middleware.js'
 
+import predictionRouter from './routes/prediction.routes.js'
+
 const app = express()
 
 // CORS Configuration
@@ -29,6 +31,7 @@ app.use(express.json())
 
 // API Routes
 app.use('/api', healthRouter)
+app.use('/api', predictionRouter)
 
 // 404 Handler
 app.use(notFoundHandler)
