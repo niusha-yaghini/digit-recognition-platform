@@ -1,0 +1,168 @@
+.homePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8%;
+}
+
+.pageHeader {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.brandIcon {
+  color: #2563eb;
+  font-size: 26px;
+}
+
+.pageHeader nav {
+  display: flex;
+  gap: 32px;
+}
+
+.pageHeader nav a {
+  text-decoration: none;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.heroSection {
+  text-align: center;
+  padding: 75px 0 45px;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.heroSection h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.2;
+  margin: 22px 0;
+}
+
+.heroSection h1 span {
+  color: #2563eb;
+}
+
+.heroDescription {
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.uploadSection {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.uploadContent {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+}
+
+/* .uploadIcon {
+  font-size: 32px;
+  color: #2563eb;
+  margin-bottom: 15px;
+} */
+
+.uploadContent h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.uploadContent > p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+/* .uploadBox {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 35px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+} */
+
+/* .uploadBox p {
+  font-weight: 600;
+}
+
+.uploadBox span,
+.uploadBox small {
+  color: #94a3b8;
+  font-size: 13px;
+} */
+
+/* .uploadBox button {
+  background: #eff6ff;
+  color: #2563eb;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 7px;
+  font-weight: 600;
+} */
+
+.predictButton {
+  width: 100%;
+  padding: 14px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.predictButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageFooter {
+  margin-top: auto;
+  padding: 45px 0 25px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .homePage {
+    padding: 0 5%;
+  }
+
+  .pageHeader nav {
+    gap: 12px;
+  }
+
+  .pageHeader nav a {
+    font-size: 12px;
+  }
+
+  .uploadContent {
+    padding: 24px 18px;
+  }
+}
