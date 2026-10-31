@@ -4,6 +4,9 @@ import cors, { type CorsOptions } from 'cors'
 import healthRouter from './routes/health.routes.js'
 import { env } from './config/env.js'
 
+import { notFoundHandler } from './middleware/not-found.middleware.js'
+import { errorHandler } from './middleware/error.middleware.js'
+
 const app = express()
 
 // CORS Configuration
@@ -26,5 +29,11 @@ app.use(express.json())
 
 // API Routes
 app.use('/api', healthRouter)
+
+// 404 Handler
+app.use(notFoundHandler)
+
+// Centralized Error Handler
+app.use(errorHandler)
 
 export default app
