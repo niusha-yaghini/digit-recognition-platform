@@ -36,7 +36,8 @@ function Prediction({ file }: PredictionProps) {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:3000/api/predict", {
+      // const response = await fetch("http://localhost:3000/api/predict", {
+      const response = await fetch("/api/predict", {
         method: "POST",
         body: formData,
       });
